@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@google-cloud/secret-manager": "^6.1.1",
     "@tailwindcss/typography": "^0.5.19",
     "@types/node": "^25.0.8",
     "@types/react": "^19.2.8",

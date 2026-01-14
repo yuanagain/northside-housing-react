@@ -10,3 +10,4 @@
 [00:00:01.179] Server  LOG     
 [00:00:01.225] Server  LOG     ✓ Ready in 1076ms
 [10:13:20.280] Server  LOG       Reload env: .env.local
+[10:22:28.754] Server  LOG       Reload env: .env.local

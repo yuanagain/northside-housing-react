@@ -6,6 +6,7 @@ import PropertyMap from '../components/PropertyMap'
 import PropertyList from '../components/PropertyList'
 import Header from '../components/Header'
 import LoadingSpinner from '../components/LoadingSpinner'
+import MapsLoader from '../components/MapsLoader'
 
 interface Hospital {
   name: string
@@ -121,112 +122,114 @@ export default function HomePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Header />
+    <MapsLoader>
+      <div className="min-h-screen bg-gray-50">
+        <Header />
 
-      <div className="container mx-auto px-4 py-8">
-        <div className="grid lg:grid-cols-4 gap-6 h-[calc(100vh-8rem)]">
-          {/* Sidebar */}
-          <div className="lg:col-span-1 space-y-6 overflow-y-auto custom-scrollbar">
-            <div className="card">
-              <h2 className="text-lg font-semibold text-gray-900 mb-4">
-                🏥 Select Hospital
-              </h2>
-              <HospitalSelector
-                hospitals={hospitals}
-                selectedHospital={selectedHospital}
-                onHospitalSelect={setSelectedHospital}
-              />
-            </div>
-
-            {selectedHospital && (
+        <div className="container mx-auto px-4 py-8">
+          <div className="grid lg:grid-cols-4 gap-6 h-[calc(100vh-8rem)]">
+            {/* Sidebar */}
+            <div className="lg:col-span-1 space-y-6 overflow-y-auto custom-scrollbar">
               <div className="card">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                  🔍 Filter Properties
-                </h3>
+                <h2 className="text-lg font-semibold text-gray-900 mb-4">
+                  🏥 Select Hospital
+                </h2>
+                <HospitalSelector
+                  hospitals={hospitals}
+                  selectedHospital={selectedHospital}
+                  onHospitalSelect={setSelectedHospital}
+                />
+              </div>
 
-                <div className="space-y-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Search Properties
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Property name or address..."
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-northside-blue focus:border-transparent"
-                      value={searchTerm}
-                      onChange={(e) => setSearchTerm(e.target.value)}
-                    />
-                  </div>
+              {selectedHospital && (
+                <div className="card">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                    🔍 Filter Properties
+                  </h3>
 
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Max Commute: {maxCommute} minutes
-                    </label>
-                    <input
-                      type="range"
-                      min="5"
-                      max="60"
-                      value={maxCommute}
-                      onChange={(e) => setMaxCommute(Number(e.target.value))}
-                      className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
-                    />
-                  </div>
+                  <div className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Search Properties
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="Property name or address..."
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-northside-blue focus:border-transparent"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                      />
+                    </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Min Rating: {minRating === 0 ? 'Any' : minRating.toFixed(1)}
-                    </label>
-                    <input
-                      type="range"
-                      min="0"
-                      max="5"
-                      step="0.5"
-                      value={minRating}
-                      onChange={(e) => setMinRating(Number(e.target.value))}
-                      className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
-                    />
-                  </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Max Commute: {maxCommute} minutes
+                      </label>
+                      <input
+                        type="range"
+                        min="5"
+                        max="60"
+                        value={maxCommute}
+                        onChange={(e) => setMaxCommute(Number(e.target.value))}
+                        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
+                      />
+                    </div>
 
-                  <div className="pt-4 border-t border-gray-200">
-                    <div className="text-sm text-gray-600">
-                      <div className="flex justify-between">
-                        <span>Found:</span>
-                        <span className="font-medium">{filteredProperties.length} properties</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Hospital:</span>
-                        <span className="font-medium">{selectedHospital.name.replace('Northside Hospital ', '')}</span>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Min Rating: {minRating === 0 ? 'Any' : minRating.toFixed(1)}
+                      </label>
+                      <input
+                        type="range"
+                        min="0"
+                        max="5"
+                        step="0.5"
+                        value={minRating}
+                        onChange={(e) => setMinRating(Number(e.target.value))}
+                        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
+                      />
+                    </div>
+
+                    <div className="pt-4 border-t border-gray-200">
+                      <div className="text-sm text-gray-600">
+                        <div className="flex justify-between">
+                          <span>Found:</span>
+                          <span className="font-medium">{filteredProperties.length} properties</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span>Hospital:</span>
+                          <span className="font-medium">{selectedHospital.name.replace('Northside Hospital ', '')}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            )}
-          </div>
+              )}
+            </div>
 
-          {/* Map */}
-          <div className="lg:col-span-2">
-            <div className="card h-full p-0">
-              <PropertyMap
-                center={mapCenter}
-                hospital={selectedHospital}
+            {/* Map */}
+            <div className="lg:col-span-2">
+              <div className="card h-full p-0">
+                <PropertyMap
+                  center={mapCenter}
+                  hospital={selectedHospital}
+                  properties={filteredProperties}
+                  loading={loadingProperties}
+                />
+              </div>
+            </div>
+
+            {/* Property List */}
+            <div className="lg:col-span-1">
+              <PropertyList
                 properties={filteredProperties}
                 loading={loadingProperties}
+                selectedHospital={selectedHospital}
               />
             </div>
           </div>
-
-          {/* Property List */}
-          <div className="lg:col-span-1">
-            <PropertyList
-              properties={filteredProperties}
-              loading={loadingProperties}
-              selectedHospital={selectedHospital}
-            />
-          </div>
         </div>
       </div>
-    </div>
+    </MapsLoader>
   )
 }
