@@ -29,7 +29,7 @@ export default function RootLayout({
         <script
           async
           defer
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCChNqSZkffXY573d68GW8V9jvo4cfMdss&libraries=geometry,places"
+          src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&libraries=geometry,places`}
         />
       </head>
       <body className={inter.className}>
