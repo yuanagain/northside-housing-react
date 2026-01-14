@@ -35,9 +35,16 @@ export default function PropertyMap({ center, hospital, properties, loading }: P
   const infoWindowRef = useRef<google.maps.InfoWindow | null>(null)
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.google && mapRef.current) {
-      initializeMap()
+    const initMapWhenReady = () => {
+      if (typeof window !== 'undefined' && window.google && window.google.maps && mapRef.current) {
+        initializeMap()
+      } else {
+        // Poll for Google Maps to be ready
+        setTimeout(initMapWhenReady, 100)
+      }
     }
+
+    initMapWhenReady()
   }, [])
 
   useEffect(() => {
