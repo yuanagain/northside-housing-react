@@ -66,25 +66,49 @@ export default function PropertyList({ properties, loading, selectedHospital }: 
   }
 
   const getPropertyImageUrl = async (property: Property, index: number): Promise<string> => {
-    // If we have a place_id, try to get real Google Places photo
-    if (property.place_id) {
-      try {
-        const API_BASE_URL = process.env.NODE_ENV === 'development'
-          ? 'http://localhost:8080'
-          : 'https://northside-housing-explorer-907131932548.us-central1.run.app'
+    const API_BASE_URL = process.env.NODE_ENV === 'development'
+      ? 'http://localhost:8080'
+      : 'https://northside-housing-explorer-907131932548.us-central1.run.app'
 
+    // Strategy 1: Try using place_id if available and valid
+    if (property.place_id && property.place_id.trim() && property.place_id !== 'None') {
+      try {
         const response = await fetch(`${API_BASE_URL}/api/property/${property.place_id}/photo`)
         const data = await response.json()
 
         if (data.has_photo && data.photo_url) {
+          console.log(`Got photo for ${property.property_name} via place_id`)
           return data.photo_url
         }
       } catch (error) {
-        console.log('Failed to fetch real property photo, using fallback')
+        console.log(`Place ID photo fetch failed for ${property.property_name}`)
       }
     }
 
-    // Fallback to generic apartment images
+    // Strategy 2: Try searching by property name and address
+    try {
+      const searchResponse = await fetch(`${API_BASE_URL}/api/property/search-photo`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          property_name: property.property_name,
+          address: property.address
+        })
+      })
+
+      const searchData = await searchResponse.json()
+
+      if (searchData.has_photo && searchData.photo_url) {
+        console.log(`Got photo for ${property.property_name} via search`)
+        return searchData.photo_url
+      }
+    } catch (error) {
+      console.log(`Search photo fetch failed for ${property.property_name}`)
+    }
+
+    // Strategy 3: Fallback to curated apartment images
     const baseImages = [
       'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=250&fit=crop',
       'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&h=250&fit=crop',
@@ -97,6 +121,7 @@ export default function PropertyList({ properties, loading, selectedHospital }: 
     ]
 
     const hash = property.property_name.length + index
+    console.log(`Using fallback image for ${property.property_name}`)
     return baseImages[hash % baseImages.length]
   }
 
