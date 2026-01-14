@@ -28,7 +28,9 @@ interface Property {
   marketing_summary?: string
 }
 
-const API_BASE_URL = 'https://northside-housing-explorer-907131932548.us-central1.run.app'
+const API_BASE_URL = process.env.NODE_ENV === 'development'
+  ? 'http://localhost:8080'
+  : 'https://northside-housing-explorer-907131932548.us-central1.run.app'
 
 export default function HomePage() {
   const [hospitals, setHospitals] = useState<Hospital[]>([])
