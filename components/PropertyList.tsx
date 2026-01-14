@@ -68,9 +68,32 @@ export default function PropertyList({ properties, loading, selectedHospital }: 
   const getPropertyImageUrl = async (property: Property, index: number): Promise<string> => {
     const API_BASE_URL = process.env.NODE_ENV === 'development'
       ? 'http://localhost:8080'
-      : 'https://northside-housing-explorer-907131932548.us-central1.run.app'
+      : 'https://northside-housing-explorer-qva5ddbzhq-uc.a.run.app'
 
-    // Strategy 1: Try using place_id if available and valid
+    // Strategy 1: Try using keyword-based Maps photo approach
+    try {
+      const mapsResponse = await fetch(`${API_BASE_URL}/api/property/maps-photo`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          property_name: property.property_name,
+          address: property.address
+        })
+      })
+
+      const mapsData = await mapsResponse.json()
+
+      if (mapsData.has_photo && mapsData.photo_url) {
+        console.log(`Got photo for ${property.property_name} via keyword-based mapping`)
+        return mapsData.photo_url
+      }
+    } catch (error) {
+      console.log(`Keyword-based photo fetch failed for ${property.property_name}`)
+    }
+
+    // Strategy 2: Try using place_id if available and valid
     if (property.place_id && property.place_id.trim() && property.place_id !== 'None') {
       try {
         const response = await fetch(`${API_BASE_URL}/api/property/${property.place_id}/photo`)
@@ -85,7 +108,7 @@ export default function PropertyList({ properties, loading, selectedHospital }: 
       }
     }
 
-    // Strategy 2: Try searching by property name and address
+    // Strategy 3: Try searching by property name and address
     try {
       const searchResponse = await fetch(`${API_BASE_URL}/api/property/search-photo`, {
         method: 'POST',
@@ -108,7 +131,7 @@ export default function PropertyList({ properties, loading, selectedHospital }: 
       console.log(`Search photo fetch failed for ${property.property_name}`)
     }
 
-    // Strategy 3: Fallback to curated apartment images
+    // Strategy 4: Fallback to curated apartment images
     const baseImages = [
       'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=250&fit=crop',
       'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&h=250&fit=crop',
