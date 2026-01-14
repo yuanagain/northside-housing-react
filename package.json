@@ -1,7 +1,7 @@
 {
-  "name": "northside-react",
+  "name": "anchormatch-explorer",
   "version": "1.0.0",
-  "description": "",
+  "description": "Professional housing proximity analysis for healthcare workers",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",

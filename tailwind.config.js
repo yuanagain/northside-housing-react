@@ -8,6 +8,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        'anchormatch': {
+          blue: '#1e40af',
+          green: '#059669',
+          light: '#f0f9ff',
+        },
+        // Backwards compatibility
         'northside': {
           blue: '#1e40af',
           green: '#059669',

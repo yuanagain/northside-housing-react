@@ -135,7 +135,7 @@ export default function HomePage() {
           <div className="lg:col-span-1 space-y-6 overflow-y-auto custom-scrollbar">
             <div className="card">
               <h2 className="text-lg font-semibold text-gray-900 mb-4">
-                Hospital Location
+                Workplace Location
               </h2>
               <HospitalSelector
                 hospitals={hospitals}

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Anchormatch Explorer',
     description: 'Professional housing proximity analysis for healthcare workers.',
     type: 'website',
-    url: 'https://northside-housing-react.vercel.app',
+    url: 'https://app.anchormatch.com',
   }
 }
 

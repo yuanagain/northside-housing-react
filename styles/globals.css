@@ -18,7 +18,7 @@
   }
 
   .btn-primary {
-    @apply bg-northside-blue text-white hover:bg-blue-700 focus:ring-blue-500 shadow-sm hover:shadow-md;
+    @apply bg-anchormatch-blue text-white hover:bg-blue-700 focus:ring-blue-500 shadow-sm hover:shadow-md;
   }
 
   .btn-secondary {
@@ -34,7 +34,7 @@
   }
 
   .property-marker {
-    @apply w-3 h-3 bg-northside-blue rounded-full border-2 border-white shadow-md;
+    @apply w-3 h-3 bg-anchormatch-blue rounded-full border-2 border-white shadow-md;
   }
 }
 
