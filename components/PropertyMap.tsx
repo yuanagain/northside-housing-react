@@ -226,7 +226,7 @@ export default function PropertyMap({ center, hospital, properties, loading }: P
           </div>
           <div className="flex items-center space-x-2">
             <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-            <span>>25 min drive</span>
+            <span>&gt;25 min drive</span>
           </div>
         </div>
       </div>
