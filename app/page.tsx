@@ -43,6 +43,7 @@ export default function HomePage() {
   const [searchTerm, setSearchTerm] = useState('')
   const [maxCommute, setMaxCommute] = useState(30)
   const [minRating, setMinRating] = useState(0)
+  const [selectedCommuteTime, setSelectedCommuteTime] = useState('wed_5_30pm')
 
   useEffect(() => {
     fetchHospitals()
@@ -151,12 +152,29 @@ export default function HomePage() {
                 <div className="space-y-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Commute Time Scenario
+                    </label>
+                    <select
+                      value={selectedCommuteTime}
+                      onChange={(e) => setSelectedCommuteTime(e.target.value)}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    >
+                      <option value="wed_5_30pm">Wednesday 5:30pm ET</option>
+                      <option value="mon_8_00am">Monday 8:00am ET (Coming Soon)</option>
+                      <option value="fri_6_00pm">Friday 6:00pm ET (Coming Soon)</option>
+                      <option value="sat_10_00am">Saturday 10:00am ET (Coming Soon)</option>
+                      <option value="off_peak">Off-Peak Hours (Coming Soon)</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                       Property Name or Address
                     </label>
                     <input
                       type="text"
                       placeholder="Enter property name or address..."
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-northside-blue focus:border-transparent"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
                     />

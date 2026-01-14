@@ -10,12 +10,14 @@ export default function Header() {
               </svg>
             </div>
             <div>
-              <h1 className="text-2xl font-semibold text-gray-900">
-                Anchormatch Explorer
-              </h1>
-              <p className="text-gray-600 text-sm">
-                Professional housing proximity analysis for healthcare workers
-              </p>
+              <div className="flex items-center gap-3">
+                <h1 className="text-2xl font-semibold text-gray-900">
+                  Anchormatch Explorer
+                </h1>
+                <span className="px-2 py-1 text-xs font-semibold bg-blue-100 text-blue-800 rounded-full">
+                  BETA
+                </span>
+              </div>
             </div>
           </div>
 
@@ -23,14 +25,6 @@ export default function Header() {
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-green-500 rounded-full"></div>
               <span>Wed 5:30pm ET rush hour data</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-              <span>6 hospital locations</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-              <span>Verified property data</span>
             </div>
           </div>
         </div>

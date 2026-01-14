@@ -41,6 +41,24 @@ export default function PropertyList({ properties, loading, selectedHospital }: 
     return 'text-red-600 bg-red-50'
   }
 
+  const getPropertyImageUrl = (propertyName: string, index: number) => {
+    // Generate a deterministic but varied image URL based on property name
+    const baseImages = [
+      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=250&fit=crop',
+      'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&h=250&fit=crop',
+      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&h=250&fit=crop',
+      'https://images.unsplash.com/photo-1571055107559-3e67626fa8be?w=400&h=250&fit=crop',
+      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&h=250&fit=crop',
+      'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=250&fit=crop',
+      'https://images.unsplash.com/photo-1515263487990-61b07816b507?w=400&h=250&fit=crop',
+      'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=250&fit=crop',
+    ]
+
+    // Use property name hash + index to select image
+    const hash = propertyName.length + index
+    return baseImages[hash % baseImages.length]
+  }
+
   const getMockPricing = (index: number) => {
     const prices = ['$1,850', '$2,100', '$1,950', '$2,250', '$1,750', '$2,400', '$1,650', '$2,050']
     const concessions = [
@@ -113,24 +131,42 @@ export default function PropertyList({ properties, loading, selectedHospital }: 
               return (
                 <div
                   key={index}
-                  className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all duration-200 hover:border-northside-blue cursor-pointer"
+                  className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-all duration-200 hover:border-blue-500 cursor-pointer"
                 >
-                  <div className="flex justify-between items-start mb-3">
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-semibold text-gray-900 text-sm leading-tight line-clamp-2">
-                        {property.property_name}
-                      </h3>
-                      <p className="text-xs text-gray-600 mt-1 line-clamp-2">
-                        {property.address}
-                      </p>
-                    </div>
-                    <div className="ml-3 text-right">
-                      <div className="text-lg font-bold text-gray-900">
-                        {mockData.price}
+                  {/* Property Image */}
+                  <div className="relative">
+                    <img
+                      src={getPropertyImageUrl(property.property_name, index)}
+                      alt={property.property_name}
+                      className="w-full h-32 object-cover"
+                      onError={(e) => {
+                        e.currentTarget.src = 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=250&fit=crop'
+                      }}
+                    />
+                    <div className="absolute top-2 right-2">
+                      <div className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${getDriveTimeColor(property.driving_duration_minutes)}`}>
+                        🚗 {property.driving_duration_minutes}min
                       </div>
-                      <div className="text-xs text-gray-500">1BD price</div>
                     </div>
                   </div>
+
+                  <div className="p-4">
+                    <div className="flex justify-between items-start mb-3">
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-semibold text-gray-900 text-sm leading-tight line-clamp-2">
+                          {property.property_name}
+                        </h3>
+                        <p className="text-xs text-gray-600 mt-1 line-clamp-2">
+                          {property.address}
+                        </p>
+                      </div>
+                      <div className="ml-3 text-right">
+                        <div className="text-lg font-bold text-gray-900">
+                          {mockData.price}
+                        </div>
+                        <div className="text-xs text-gray-500">1BD price</div>
+                      </div>
+                    </div>
 
                   {/* Mock Data Section */}
                   <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-3 mb-3">
@@ -149,34 +185,32 @@ export default function PropertyList({ properties, loading, selectedHospital }: 
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-3 text-xs">
-                    <div>
-                      <div className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${getDriveTimeColor(property.driving_duration_minutes)}`}>
-                        🚗 {property.driving_duration_minutes}min
+                    <div className="grid grid-cols-2 gap-3 text-xs">
+                      <div>
+                        <div className="text-gray-500">
+                          Rush Hour: {property.rush_hour_duration_minutes}min
+                        </div>
                       </div>
-                      <div className="text-gray-500 mt-1">
-                        Rush: {property.rush_hour_duration_minutes}min
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="flex items-center justify-end space-x-1">
-                        <span className="text-yellow-400 text-sm">
-                          {getRatingStars(property.rating)}
-                        </span>
-                      </div>
-                      <div className="text-gray-500 mt-1">
-                        {property.total_reviews} reviews
+                      <div className="text-right">
+                        <div className="flex items-center justify-end space-x-1">
+                          <span className="text-yellow-400 text-sm">
+                            {getRatingStars(property.rating)}
+                          </span>
+                        </div>
+                        <div className="text-gray-500 mt-1">
+                          {property.total_reviews} reviews
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div className="flex items-center justify-between mt-3 pt-3 border-t border-gray-100">
-                    <div className="text-xs text-gray-500">
-                      Price Level: <span className="text-green-600 font-medium">{getPriceSymbols(property.price_level)}</span>
+                    <div className="flex items-center justify-between mt-3 pt-3 border-t border-gray-100">
+                      <div className="text-xs text-gray-500">
+                        Price Level: <span className="text-green-600 font-medium">{getPriceSymbols(property.price_level)}</span>
+                      </div>
+                      <button className="text-xs bg-blue-600 text-white px-3 py-1 rounded-full hover:bg-blue-700 transition-colors">
+                        View Details
+                      </button>
                     </div>
-                    <button className="text-xs bg-northside-blue text-white px-3 py-1 rounded-full hover:bg-blue-700 transition-colors">
-                      View Details
-                    </button>
                   </div>
                 </div>
               )
