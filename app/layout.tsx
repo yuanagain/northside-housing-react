@@ -5,12 +5,12 @@ import '../styles/globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Northside Hospital Housing Explorer',
-  description: 'Find the perfect apartment near Northside Hospital locations in Georgia. Interactive map with drive times, amenities, and pricing for healthcare professionals.',
-  keywords: 'Northside Hospital, apartments, housing, Georgia, healthcare, medical professionals, drive times',
+  title: 'Anchormatch Explorer',
+  description: 'Professional housing proximity analysis for healthcare workers. Interactive maps with commute times, amenities, and property insights.',
+  keywords: 'healthcare housing, medical professionals, proximity analysis, hospital commuting, apartments',
   openGraph: {
-    title: 'Northside Hospital Housing Explorer',
-    description: 'Find the perfect apartment near Northside Hospital locations in Georgia.',
+    title: 'Anchormatch Explorer',
+    description: 'Professional housing proximity analysis for healthcare workers.',
     type: 'website',
     url: 'https://northside-housing-react.vercel.app',
   }

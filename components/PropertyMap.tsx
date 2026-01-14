@@ -152,7 +152,7 @@ export default function PropertyMap({ center, hospital, properties, loading }: P
                   <span class=\"font-medium\">${property.driving_duration_minutes} min</span>
                 </div>
                 <div class=\"flex items-center justify-between\">
-                  <span class=\"text-gray-500\">🚙 Rush Hour:</span>
+                  <span class=\"text-gray-500\">🚙 Wed 5:30pm ET:</span>
                   <span class=\"font-medium\">${property.rush_hour_duration_minutes} min</span>
                 </div>
                 <div class=\"flex items-center justify-between\">
