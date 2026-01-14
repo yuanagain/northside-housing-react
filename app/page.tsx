@@ -64,9 +64,10 @@ export default function HomePage() {
       setHospitals(data)
       setLoading(false)
 
-      // Auto-select first hospital
+      // Auto-select Gwinnett hospital (has most properties)
       if (data.length > 0) {
-        setSelectedHospital(data[0])
+        const gwinnettHospital = data.find(h => h.name === 'Northside Hospital Gwinnett')
+        setSelectedHospital(gwinnettHospital || data[0])
       }
     } catch (error) {
       console.error('Error fetching hospitals:', error)
@@ -130,7 +131,7 @@ export default function HomePage() {
           <div className="lg:col-span-1 space-y-6 overflow-y-auto custom-scrollbar">
             <div className="card">
               <h2 className="text-lg font-semibold text-gray-900 mb-4">
-                🏥 Select Hospital
+                Hospital Location
               </h2>
               <HospitalSelector
                 hospitals={hospitals}
@@ -142,17 +143,17 @@ export default function HomePage() {
             {selectedHospital && (
               <div className="card">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                  🔍 Filter Properties
+                  Search Criteria
                 </h3>
 
                 <div className="space-y-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Search Properties
+                      Property Name or Address
                     </label>
                     <input
                       type="text"
-                      placeholder="Property name or address..."
+                      placeholder="Enter property name or address..."
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-northside-blue focus:border-transparent"
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
@@ -161,7 +162,7 @@ export default function HomePage() {
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Max Commute: {maxCommute} minutes
+                      Maximum Commute Time: {maxCommute} minutes
                     </label>
                     <input
                       type="range"
@@ -175,7 +176,7 @@ export default function HomePage() {
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Min Rating: {minRating === 0 ? 'Any' : minRating.toFixed(1)}
+                      Minimum Rating: {minRating === 0 ? 'Any' : minRating.toFixed(1)}
                     </label>
                     <input
                       type="range"
@@ -191,11 +192,11 @@ export default function HomePage() {
                   <div className="pt-4 border-t border-gray-200">
                     <div className="text-sm text-gray-600">
                       <div className="flex justify-between">
-                        <span>Found:</span>
-                        <span className="font-medium">{filteredProperties.length} properties</span>
+                        <span>Properties Found:</span>
+                        <span className="font-medium">{filteredProperties.length}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span>Hospital:</span>
+                        <span>Selected Location:</span>
                         <span className="font-medium">{selectedHospital.name.replace('Northside Hospital ', '')}</span>
                       </div>
                     </div>

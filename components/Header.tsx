@@ -1,47 +1,39 @@
 export default function Header() {
   return (
-    <header className="gradient-bg text-white shadow-xl">
+    <header className="bg-white border-b border-gray-200 shadow-sm">
       <div className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-              <span className="text-2xl">🏥</span>
+            <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
+              <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" clipRule="evenodd" />
+              </svg>
             </div>
             <div>
-              <h1 className="text-3xl font-bold">
-                Northside Housing Explorer
+              <h1 className="text-2xl font-semibold text-gray-900">
+                Northside Hospital Housing Directory
               </h1>
-              <p className="text-blue-100 text-sm">
-                Find perfect apartments near Northside Hospital locations
+              <p className="text-gray-600 text-sm">
+                Residential proximity analysis for healthcare professionals
               </p>
             </div>
           </div>
 
-          <div className="hidden md:flex items-center space-x-6">
-            <div className="glass-effect text-gray-800 px-4 py-2 rounded-lg">
-              <div className="text-sm font-medium">🚗 Real-time Drive Times</div>
-              <div className="text-xs">Updated traffic conditions</div>
+          <div className="hidden md:flex items-center space-x-6 text-sm text-gray-600">
+            <div className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              <span>Real-time commute data</span>
             </div>
-            <div className="glass-effect text-gray-800 px-4 py-2 rounded-lg">
-              <div className="text-sm font-medium">📍 6 Hospital Locations</div>
-              <div className="text-xs">Across metro Atlanta</div>
+            <div className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              <span>6 hospital locations</span>
             </div>
-            <div className="glass-effect text-gray-800 px-4 py-2 rounded-lg">
-              <div className="text-sm font-medium">🏠 250+ Properties</div>
-              <div className="text-xs">Verified apartment data</div>
+            <div className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+              <span>Verified property data</span>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Decorative wave */}
-      <div className="relative">
-        <svg className="w-full h-6" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path
-            d="M0,0 C0,0 400,100 600,100 S1200,0 1200,0 L1200,120 L0,120 Z"
-            fill="rgb(249, 250, 251)"
-          />
-        </svg>
       </div>
     </header>
   )
