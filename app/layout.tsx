@@ -26,6 +26,13 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY && (
+          <script
+            async
+            defer
+            src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&libraries=geometry,places`}
+          />
+        )}
       </head>
       <body className={inter.className}>
         <div className="min-h-screen bg-gray-50">

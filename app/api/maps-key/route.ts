@@ -1,17 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getGoogleMapsApiKey } from '../../../lib/secrets';
 
 export async function GET(request: NextRequest) {
   try {
-    // Check if running in development mode with local env variable
-    if (process.env.NODE_ENV === 'development' && process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) {
-      return NextResponse.json({
-        apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
-      });
+    // For client-side Google Maps API, we need to use environment variables
+    // Both development and production will use NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+    const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+
+    if (!apiKey) {
+      console.error('NEXT_PUBLIC_GOOGLE_MAPS_API_KEY environment variable not set');
+      return NextResponse.json(
+        { error: 'API key not configured' },
+        { status: 500 }
+      );
     }
 
-    // Production: fetch from Google Cloud Secret Manager
-    const apiKey = await getGoogleMapsApiKey();
     return NextResponse.json({ apiKey });
   } catch (error) {
     console.error('Error fetching Google Maps API key:', error);
