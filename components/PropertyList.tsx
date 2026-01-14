@@ -68,7 +68,7 @@ export default function PropertyList({ properties, loading, selectedHospital }: 
   const getPropertyImageUrl = async (property: Property, index: number): Promise<string> => {
     const API_BASE_URL = process.env.NODE_ENV === 'development'
       ? 'http://localhost:8080'
-      : 'https://northside-housing-explorer-qva5ddbzhq-uc.a.run.app'
+      : 'https://northside-housing-explorer-907131932548.us-central1.run.app'
 
     // Strategy 1: Try using keyword-based Maps photo approach
     try {
