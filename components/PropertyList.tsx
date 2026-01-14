@@ -16,6 +16,7 @@ interface Property {
   total_reviews: number
   price_level: number
   marketing_summary?: string
+  place_id?: string
 }
 
 interface PropertyListProps {
@@ -24,7 +25,30 @@ interface PropertyListProps {
   selectedHospital: Hospital | null
 }
 
+import { useState, useEffect } from 'react'
+
 export default function PropertyList({ properties, loading, selectedHospital }: PropertyListProps) {
+  const [propertyImages, setPropertyImages] = useState<{ [key: number]: string }>({})
+
+  // Load property images when properties change
+  useEffect(() => {
+    const loadPropertyImages = async () => {
+      const imageMap: { [key: number]: string } = {}
+
+      for (let i = 0; i < properties.length; i++) {
+        const property = properties[i]
+        const imageUrl = await getPropertyImageUrl(property, i)
+        imageMap[i] = imageUrl
+      }
+
+      setPropertyImages(imageMap)
+    }
+
+    if (properties.length > 0) {
+      loadPropertyImages()
+    }
+  }, [properties])
+
   const getRatingStars = (rating: number) => {
     const fullStars = Math.floor(rating)
     const hasHalfStar = rating % 1 >= 0.5
@@ -41,8 +65,26 @@ export default function PropertyList({ properties, loading, selectedHospital }: 
     return 'text-red-600 bg-red-50'
   }
 
-  const getPropertyImageUrl = (propertyName: string, index: number) => {
-    // Generate a deterministic but varied image URL based on property name
+  const getPropertyImageUrl = async (property: Property, index: number): Promise<string> => {
+    // If we have a place_id, try to get real Google Places photo
+    if (property.place_id) {
+      try {
+        const API_BASE_URL = process.env.NODE_ENV === 'development'
+          ? 'http://localhost:8080'
+          : 'https://northside-housing-explorer-907131932548.us-central1.run.app'
+
+        const response = await fetch(`${API_BASE_URL}/api/property/${property.place_id}/photo`)
+        const data = await response.json()
+
+        if (data.has_photo && data.photo_url) {
+          return data.photo_url
+        }
+      } catch (error) {
+        console.log('Failed to fetch real property photo, using fallback')
+      }
+    }
+
+    // Fallback to generic apartment images
     const baseImages = [
       'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=250&fit=crop',
       'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&h=250&fit=crop',
@@ -54,8 +96,7 @@ export default function PropertyList({ properties, loading, selectedHospital }: 
       'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=250&fit=crop',
     ]
 
-    // Use property name hash + index to select image
-    const hash = propertyName.length + index
+    const hash = property.property_name.length + index
     return baseImages[hash % baseImages.length]
   }
 
@@ -136,7 +177,7 @@ export default function PropertyList({ properties, loading, selectedHospital }: 
                   {/* Property Image */}
                   <div className="relative">
                     <img
-                      src={getPropertyImageUrl(property.property_name, index)}
+                      src={propertyImages[index] || 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=250&fit=crop'}
                       alt={property.property_name}
                       className="w-full h-32 object-cover"
                       onError={(e) => {

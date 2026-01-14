@@ -1,14 +1,442 @@
-[00:00:01.178] Server  LOG     
-[00:00:01.178] Server  LOG       We detected TypeScript in your project and reconfigured your tsconfig.json file for you.
-[00:00:01.178] Server  LOG       The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
+[00:00:00.582] Server  LOG     ✓ Ready in 367ms
+[00:00:04.698] Browser LOG     Environment: development
+[00:00:04.698] Browser LOG     API_BASE_URL: http://localhost:8080
+[00:00:04.698] Browser LOG     Full URL: http://localhost:8080/api/hospitals
+[00:00:04.698] Browser ERROR   Error fetching hospitals: {}
+[00:00:15.455] Browser LOG     Environment: development
+[00:00:15.455] Browser LOG     API_BASE_URL: http://localhost:8080
+[00:00:15.455] Browser LOG     Full URL: http://localhost:8080/api/hospitals
+[00:00:15.455] Browser ERROR   Error fetching hospitals: {}
+[00:02:10.732] Browser LOG     Environment: development
+[00:02:10.732] Browser LOG     API_BASE_URL: http://localhost:8080
+[00:02:10.732] Browser LOG     Full URL: http://localhost:8080/api/hospitals
+[00:02:10.732] Browser WARN    As of February 21st, 2024, google.maps.Marker is deprecated. Please use google.maps.marker.AdvancedMarkerElement instead. At this time, google.maps.Marker is not scheduled to be discontinued, but google.maps.marker.AdvancedMarkerElement is recommended over google.maps.Marker. While google.maps.Marker will continue to receive bug fixes for any major regressions, existing bugs in google.maps.Marker will not be addressed. At least 12 months notice will be given before support is discontinued. Please see https://developers.google.com/maps/deprecations for additional details and https://developers.google.com/maps/documentation/javascript/advanced-markers/migration for the migration guide.
+[00:03:05.108] Server  LOG     ✓ Compiled in 42ms
+[00:08:07.030] Server  LOG     ✓ Compiled in 65ms
+[00:08:20.715] Server  LOG     ✓ Compiled in 32ms
+[00:08:32.610] Server  LOG     ✓ Compiled in 25ms
+[00:08:44.600] Server  LOG     ✓ Compiled in 29ms
+[00:09:23.672] Server  LOG     ✓ Compiled in 34ms
+[00:09:38.782] Server  LOG     ✓ Compiled in 58ms
+[00:09:38.888] Browser ERROR   ./dev_anchormatch/northside-react/components/PropertyList.tsx:222:7
+Parsing ecmascript source code failed
+  220 |           </div>
+  221 |         )}
+> 222 |       </div>
+      |       ^
+  223 |     </div>
+  224 |   )
+  225 | }
 
-[00:00:01.179] Server  LOG       	- include was updated to add '.next/dev/types/**/*.ts'
-[00:00:01.179] Server  LOG     
-[00:00:01.179] Server  LOG       The following mandatory changes were made to your tsconfig.json:
+Expected a semicolon
 
-[00:00:01.179] Server  LOG       	- jsx was set to react-jsx (next.js uses the React automatic runtime)
-[00:00:01.179] Server  LOG     
-[00:00:01.225] Server  LOG     ✓ Ready in 1076ms
-[10:13:20.280] Server  LOG       Reload env: .env.local
-[10:22:28.754] Server  LOG       Reload env: .env.local
-[10:34:18.251] Server  LOG       Reload env: .env.local
+Import traces:
+  Client Component Browser:
+    ./dev_anchormatch/northside-react/components/PropertyList.tsx [Client Component Browser]
+    ./dev_anchormatch/northside-react/app/page.tsx [Client Component Browser]
+    ./dev_anchormatch/northside-react/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./dev_anchormatch/northside-react/components/PropertyList.tsx [Client Component SSR]
+    ./dev_anchormatch/northside-react/app/page.tsx [Client Component SSR]
+    ./dev_anchormatch/northside-react/app/page.tsx [Server Component]
+[00:09:38.888] Browser ERROR   ./dev_anchormatch/northside-react/components/PropertyList.tsx:219:15
+Parsing ecmascript source code failed
+  217 |                 </div>
+  218 |               )
+> 219 |             })}
+      |               ^
+  220 |           </div>
+  221 |         )}
+  222 |       </div>
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import traces:
+  Client Component Browser:
+    ./dev_anchormatch/northside-react/components/PropertyList.tsx [Client Component Browser]
+    ./dev_anchormatch/northside-react/app/page.tsx [Client Component Browser]
+    ./dev_anchormatch/northside-react/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./dev_anchormatch/northside-react/components/PropertyList.tsx [Client Component SSR]
+    ./dev_anchormatch/northside-react/app/page.tsx [Client Component SSR]
+    ./dev_anchormatch/northside-react/app/page.tsx [Server Component]
+[00:09:38.888] Browser ERROR   ./dev_anchormatch/northside-react/components/PropertyList.tsx:222:8
+Parsing ecmascript source code failed
+  220 |           </div>
+  221 |         )}
+> 222 |       </div>
+      |        ^^^^^
+  223 |     </div>
+  224 |   )
+  225 | }
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./dev_anchormatch/northside-react/components/PropertyList.tsx [Client Component Browser]
+    ./dev_anchormatch/northside-react/app/page.tsx [Client Component Browser]
+    ./dev_anchormatch/northside-react/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./dev_anchormatch/northside-react/components/PropertyList.tsx [Client Component SSR]
+    ./dev_anchormatch/northside-react/app/page.tsx [Client Component SSR]
+    ./dev_anchormatch/northside-react/app/page.tsx [Server Component]
+[00:09:49.782] Browser ERROR   ./dev_anchormatch/northside-react/components/PropertyList.tsx:219:7
+Parsing ecmascript source code failed
+  217 |           </div>
+  218 |         )}
+> 219 |       </div>
+      |       ^
+  220 |     </div>
+  221 |   )
+  222 | }
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./dev_anchormatch/northside-react/components/PropertyList.tsx [Client Component Browser]
+    ./dev_anchormatch/northside-react/app/page.tsx [Client Component Browser]
+    ./dev_anchormatch/northside-react/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./dev_anchormatch/northside-react/components/PropertyList.tsx [Client Component SSR]
+    ./dev_anchormatch/northside-react/app/page.tsx [Client Component SSR]
+    ./dev_anchormatch/northside-react/app/page.tsx [Server Component]
+[00:09:49.782] Browser ERROR   ./dev_anchormatch/northside-react/components/PropertyList.tsx:216:15
+Parsing ecmascript source code failed
+  214 |                 </div>
+  215 |               )
+> 216 |             })}
+      |               ^
+  217 |           </div>
+  218 |         )}
+  219 |       </div>
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import traces:
+  Client Component Browser:
+    ./dev_anchormatch/northside-react/components/PropertyList.tsx [Client Component Browser]
+    ./dev_anchormatch/northside-react/app/page.tsx [Client Component Browser]
+    ./dev_anchormatch/northside-react/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./dev_anchormatch/northside-react/components/PropertyList.tsx [Client Component SSR]
+    ./dev_anchormatch/northside-react/app/page.tsx [Client Component SSR]
+    ./dev_anchormatch/northside-react/app/page.tsx [Server Component]
+[00:09:49.782] Browser ERROR   ./dev_anchormatch/northside-react/components/PropertyList.tsx:219:8
+Parsing ecmascript source code failed
+  217 |           </div>
+  218 |         )}
+> 219 |       </div>
+      |        ^^^^^
+  220 |     </div>
+  221 |   )
+  222 | }
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./dev_anchormatch/northside-react/components/PropertyList.tsx [Client Component Browser]
+    ./dev_anchormatch/northside-react/app/page.tsx [Client Component Browser]
+    ./dev_anchormatch/northside-react/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./dev_anchormatch/northside-react/components/PropertyList.tsx [Client Component SSR]
+    ./dev_anchormatch/northside-react/app/page.tsx [Client Component SSR]
+    ./dev_anchormatch/northside-react/app/page.tsx [Server Component]
+[00:09:58.258] Server  LOG     ✓ Compiled in 37ms
+[00:09:58.400] Browser ERROR   ./dev_anchormatch/northside-react/components/PropertyList.tsx:219:7
+Parsing ecmascript source code failed
+  217 |           </div>
+  218 |         )}
+> 219 |       </div>
+      |       ^
+  220 |     </div>
+  221 |   )
+  222 | }
+
+Expected a semicolon
+
+Import traces:
+  Client Component Browser:
+    ./dev_anchormatch/northside-react/components/PropertyList.tsx [Client Component Browser]
+    ./dev_anchormatch/northside-react/app/page.tsx [Client Component Browser]
+    ./dev_anchormatch/northside-react/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./dev_anchormatch/northside-react/components/PropertyList.tsx [Client Component SSR]
+    ./dev_anchormatch/northside-react/app/page.tsx [Client Component SSR]
+    ./dev_anchormatch/northside-react/app/page.tsx [Server Component]
+[00:09:58.400] Browser ERROR   ./dev_anchormatch/northside-react/components/PropertyList.tsx:216:15
+Parsing ecmascript source code failed
+  214 |                 </div>
+  215 |               )
+> 216 |             })}
+      |               ^
+  217 |           </div>
+  218 |         )}
+  219 |       </div>
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import traces:
+  Client Component Browser:
+    ./dev_anchormatch/northside-react/components/PropertyList.tsx [Client Component Browser]
+    ./dev_anchormatch/northside-react/app/page.tsx [Client Component Browser]
+    ./dev_anchormatch/northside-react/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./dev_anchormatch/northside-react/components/PropertyList.tsx [Client Component SSR]
+    ./dev_anchormatch/northside-react/app/page.tsx [Client Component SSR]
+    ./dev_anchormatch/northside-react/app/page.tsx [Server Component]
+[00:09:58.400] Browser ERROR   ./dev_anchormatch/northside-react/components/PropertyList.tsx:219:8
+Parsing ecmascript source code failed
+  217 |           </div>
+  218 |         )}
+> 219 |       </div>
+      |        ^^^^^
+  220 |     </div>
+  221 |   )
+  222 | }
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./dev_anchormatch/northside-react/components/PropertyList.tsx [Client Component Browser]
+    ./dev_anchormatch/northside-react/app/page.tsx [Client Component Browser]
+    ./dev_anchormatch/northside-react/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./dev_anchormatch/northside-react/components/PropertyList.tsx [Client Component SSR]
+    ./dev_anchormatch/northside-react/app/page.tsx [Client Component SSR]
+    ./dev_anchormatch/northside-react/app/page.tsx [Server Component]
+[01:35:40.432] Browser WARN    As of February 21st, 2024, google.maps.Marker is deprecated. Please use google.maps.marker.AdvancedMarkerElement instead. At this time, google.maps.Marker is not scheduled to be discontinued, but google.maps.marker.AdvancedMarkerElement is recommended over google.maps.Marker. While google.maps.Marker will continue to receive bug fixes for any major regressions, existing bugs in google.maps.Marker will not be addressed. At least 12 months notice will be given before support is discontinued. Please see https://developers.google.com/maps/deprecations for additional details and https://developers.google.com/maps/documentation/javascript/advanced-markers/migration for the migration guide.
+[02:00:26.541] Server  LOG     ✓ Compiled in 36ms
+[02:00:47.846] Server  LOG     ✓ Compiled in 32ms
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:00:48.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:03.613] Server  LOG     ✓ Compiled in 26ms
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.683] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.683] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.683] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.683] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.683] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.683] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.683] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.683] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.683] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.683] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.683] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.683] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.683] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.683] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.683] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.683] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.683] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.683] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.683] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:04.683] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.150] Server  LOG     ✓ Compiled in 29ms
+[02:01:13.681] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.681] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.681] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.681] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.681] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.681] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.681] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.681] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.681] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.681] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.681] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.681] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.681] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.681] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.681] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:13.682] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'length')
+[02:01:40.399] Server  LOG     ✓ Compiled in 21ms
+[02:01:52.978] Server  LOG     ✓ Compiled in 23ms
