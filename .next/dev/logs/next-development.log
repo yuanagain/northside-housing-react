@@ -447,3 +447,32 @@ Import traces:
 [04:07:36.656] Server  LOG     ✓ Compiled in 31ms
 [04:08:16.724] Server  LOG     ✓ Compiled in 26ms
 [04:08:30.347] Server  LOG     ✓ Compiled in 402ms
+[07:45:56.053] Browser LOG     Got photo for Life Care Center 21 - Lawrenceville via keyword-based mapping
+[07:45:56.053] Browser LOG     Got photo for Tanglewood Heights Apartments via keyword-based mapping
+[07:45:56.053] Browser LOG     Got photo for The View at Sugarloaf Parkway via keyword-based mapping
+[07:45:56.053] Browser LOG     Got photo for Applewood III via keyword-based mapping
+[07:45:56.053] Browser LOG     Got photo for Applewood Towers via keyword-based mapping
+[07:45:56.053] Browser LOG     Got photo for Glenn Edge via keyword-based mapping
+[07:45:56.053] Browser LOG     Got photo for Applewood II via keyword-based mapping
+[07:45:56.053] Browser LOG     Got photo for Hope Assisted Living and Memory Care Center via keyword-based mapping
+[07:45:56.053] Browser LOG     Got photo for Overlook at Gwinnett Stadium via keyword-based mapping
+[07:45:56.053] Browser LOG     Got photo for Bradford Gwinnett Apartments via keyword-based mapping
+[07:45:56.053] Browser LOG     Got photo for IVY RIDGE via keyword-based mapping
+[07:45:56.053] Browser LOG     Got photo for Annandale Apartments, Inc. via keyword-based mapping
+[07:45:56.053] Browser LOG     Got photo for Pleasantdale Crossing via keyword-based mapping
+[07:45:56.053] Browser LOG     Got photo for PurittHealth - PruittHealth Liburn via keyword-based mapping
+[07:45:56.053] Browser LOG     Got photo for Hampton Woods Apartments via keyword-based mapping
+[07:45:56.053] Browser LOG     Got photo for The Reserve at Ivy Creek via keyword-based mapping
+[07:45:56.053] Browser LOG     Got photo for Lilburn Terrace via keyword-based mapping
+[07:45:56.053] Browser LOG     Got photo for Gwinnett Christian Terrace via keyword-based mapping
+[07:45:56.053] Browser LOG     Got photo for Bluestone Village Apartments via keyword-based mapping
+[07:45:56.054] Browser LOG     Got photo for SUSSEX COURT RESIDENTIAL SERVICES, INC. via keyword-based mapping
+[07:45:56.054] Browser LOG     Got photo for LACOTA APARTMENTS via keyword-based mapping
+[07:45:56.054] Browser LOG     Got photo for VILLAS AT LOGANVILLE via keyword-based mapping
+[07:45:56.054] Browser LOG     Got photo for Farmington Hills Apartments via keyword-based mapping
+[07:45:56.054] Browser LOG     Got photo for GWINNETT COUNTY RESIDENTIAL SERVICES, INC. via keyword-based mapping
+[07:45:56.054] Browser LOG     Got photo for Rainbow Heights via keyword-based mapping
+[07:45:56.054] Browser LOG     Got photo for St. Ives Assisted Living via keyword-based mapping
+[07:45:56.054] Browser LOG     Got photo for Pruitthealthcare UHS19 Laurel Baye of Lake Lanier via keyword-based mapping
+[07:45:56.054] Browser WARN    Google Maps JavaScript API has been loaded directly without loading=async. This can result in suboptimal performance. For best-practice loading patterns please see https://goo.gle/js-api-loading
+[07:47:42.902] Server  LOG     ✓ Compiled in 57ms

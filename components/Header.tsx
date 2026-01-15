@@ -4,15 +4,15 @@ export default function Header() {
       <div className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
-              <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" clipRule="evenodd" />
-              </svg>
-            </div>
+            <img
+              src="/images/anchormatch_logo_black.png"
+              alt="Anchormatch"
+              className="h-10 w-auto"
+            />
             <div>
               <div className="flex items-center gap-3">
                 <h1 className="text-2xl font-semibold text-gray-900">
-                  Anchormatch Explorer
+                  Explorer
                 </h1>
                 <span className="px-2 py-1 text-xs font-semibold bg-blue-100 text-blue-800 rounded-full">
                   BETA
